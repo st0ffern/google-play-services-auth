@@ -154,6 +154,25 @@ class GoogleAuth{
   }
 
   /**
+   * All initated users
+   * @return {Array} Array containing all users that have been initialized
+   */
+  async getUsers(){
+    return this.users
+  }
+
+  /**
+   * Init a new user
+   * @param  {object} params Object containing user data, see User object
+   * @return {userObject}        returns userObject
+   */
+  async initUser(params){
+    if (params.email == undefined || params.email.length == 0) throw Error('You must provide an email!')
+    this.users[email] = new User(this.sessionProps)
+    return this.users[email]
+  }
+
+  /**
    * [logout description]
    * @return {[type]} [description]
    */
