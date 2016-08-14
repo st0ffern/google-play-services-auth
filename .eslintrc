@@ -66,7 +66,6 @@
     "no-empty-character-class": 1,             // disallow the use of empty character classes in regular expressions
     "no-ex-assign": 1,               // disallow assigning to the exception in a catch block
     "no-extra-boolean-cast": 1,      // disallow double-negation boolean casts in a boolean context
-    "no-extra-parens": 0,            // disallow unnecessary parentheses (off by default)
     "no-extra-semi": 1,              // disallow unnecessary semicolons
     "no-func-assign": 0,             // disallow overwriting functions written as function declarations
     "no-inner-declarations": 0,      // disallow function or variable declarations in nested blocks
@@ -87,7 +86,7 @@
     "block-scoped-var": 0,           // treat var statements as if they were block scoped (off by default)
     "complexity": 0,                 // specify the maximum cyclomatic complexity allowed in a program (off by default)
     "consistent-return": 0,          // require return statements to either always or never specify values
-    "curly": 1,                      // specify curly brace conventions for all control statements
+    "curly": 0,                      // specify curly brace conventions for all control statements
     "default-case": 0,               // require default case in switch statements (off by default)
     "dot-notation": 0,               // encourages use of dot notation whenever possible
     "eqeqeq": 1,                     // require the use of === and !==
@@ -180,15 +179,13 @@
     "no-lonely-if": 0,               // disallow if as the only statement in an else block (off by default)
     "no-new-object": 1,              // disallow use of the Object constructor
     "no-spaced-func": 1,             // disallow space between function identifier and application
-    "semi-spacing": 1,               // disallow space before semicolon
     "no-ternary": 0,                 // disallow the use of ternary operators (off by default)
-    "no-trailing-spaces": 1,         // disallow trailing whitespace at the end of lines
+    "no-trailing-spaces": 0,         // disallow trailing whitespace at the end of lines
     "no-underscore-dangle": 0,       // disallow dangling underscores in identifiers
-    "no-extra-parens": 0,            // disallow wrapping of non-IIFE statements in parens
     "no-mixed-spaces-and-tabs": 1,   // disallow mixed spaces and tabs for indentation
     "quotes": [1, "single", "avoid-escape"],         // specify whether double or single quotes should be used
     "quote-props": 0,                // require quotes around object literal property names (off by default)
-    "semi": 1,                       // require or disallow use of semicolons instead of ASI
+    "semi": 0,                       // require or disallow use of semicolons instead of ASI
     "sort-vars": 0,                  // sort variables within the same declaration block (off by default)
     "space-after-keywords": 1,       // require a space after certain keywords (off by default)
     "space-in-brackets": 0,          // require or disallow spaces inside brackets (off by default)
@@ -216,8 +213,6 @@
     "react/jsx-sort-props": 0,
     "react/jsx-uses-react": 1,
     "react/jsx-uses-vars": 1,
-    "react/no-did-mount-set-state": [1, "allow-in-func"],
-    "react/no-did-update-set-state": [1, "allow-in-func"],
     "react/no-multi-comp": 0,
     "react/no-unknown-property": 0,
     "react/prop-types": 0,
