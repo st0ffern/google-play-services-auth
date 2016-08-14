@@ -3,6 +3,7 @@
   "description": "Authentication module for Google Play Services for NodeJs",
   "main": "dist/index.js",
   "scripts": {
+    "test": "eslint .",
     "example": "babel-node example/index.js",
     "compile": "babel -r babel-register -d dist/ src/",
     "prepublish": "npm run compile",
@@ -30,6 +31,8 @@
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-stage-0": "^6.5.0",
     "cz-conventional-changelog": "^1.1.7",
+    "eslint": "^3.3.0",
+    "eslint-plugin-react": "^6.0.0",
     "semantic-release": "^4.3.5"
   },
   "config": {

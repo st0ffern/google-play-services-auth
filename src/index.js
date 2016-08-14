@@ -5,11 +5,8 @@ function throwIfMissing(message) {
   throw new Error(message)
 }
 
-/**
- * Google Play Services authentication
- */
-class GoogleAuth{
 
+class User{
   constructor(props) {
     Object.assign(
       this, 
@@ -29,23 +26,22 @@ class GoogleAuth{
         sdk_version: "17",
         auth_url: 'https://android.clients.google.com/auth',
         user_agent: 'Dalvik/2.1.0 (Linux U Android 5.1.1 Andromax I56D2G Build/LMY47V',
+        isLogged: false,
         currentAuth: {},
       }, 
       props
     )
   }
 
-
-  /**
-   * Login user with username and password
-   * @return {string} Master token
-   */
-  async login(){
+  async login(email, password){
+    this.email = email
+    this.password = password
     var res = await this.getToken()
-    this.currentAuth = await this.getMasterToken(res.Token)
-    return this.currentAuth.Auth
+    var userData = await this.getMasterToken(res.Token)
+    Object.assign(this, userData)
+    this.isLogged = true
+    return this
   }
-
 
   /**
    * [getToken description]
@@ -80,6 +76,11 @@ class GoogleAuth{
     return res
   }
 
+  /**
+   * [getMasterToken description]
+   * @param  {[type]} token [description]
+   * @return {[type]}       [description]
+   */
   async getMasterToken(token = throwIfMissing('Error: Google authtoken is missing')){
 
     if (this.app == null) throw Error('Error: App name is missing (app)')
@@ -129,5 +130,38 @@ class GoogleAuth{
     return objectRes
   }
 }
+
+
+/**
+ * Google Play Services authentication
+ */
+class GoogleAuth{
+
+  constructor(props) {
+    this.users = []
+    this.sessionProps = props
+  }
+
+  /**
+   * [login description]
+   * @param  {[type]} user     [description]
+   * @param  {[type]} password [description]
+   * @return {[type]}          [description]
+   */
+  async login(email, password){
+    this.users[email] = new User(this.sessionProps)
+    return await this.users[email].login(email, password)
+  }
+
+  /**
+   * [logout description]
+   * @return {[type]} [description]
+   */
+  async logout(){
+    //Todo
+  }
+
+}
+
 
 export default GoogleAuth
