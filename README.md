@@ -1,4 +1,6 @@
 # google-play-services-auth
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/stoffern/google-play-services-auth.svg)](https://greenkeeper.io/)
 [![](https://img.shields.io/npm/v/google-play-services-auth.svg)](https://www.npmjs.com/package/google-play-services-auth) 
 [![David](https://img.shields.io/david/stoffern/google-play-services-auth.svg?maxAge=2592000)]() 
 [![Travis](https://img.shields.io/travis/stoffern/google-play-services-auth.svg?maxAge=2592000)]() 
